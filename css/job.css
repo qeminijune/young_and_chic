@@ -23,6 +23,7 @@ body {
     margin: 0;
     box-sizing: border-box;
     background: white;
+    font-size: 20px;
 }
 
 
@@ -36,7 +37,7 @@ body {
     margin: 0 auto;
 }
 
-header {
+/* header {
     width: 100%;
 }
 
@@ -52,19 +53,62 @@ header {
 
 #head {
     width: 100%;
-    /* height: 3855px; */
 }
 
 .menu {
     width: 100%;
     height: 150px;
-    /* background: lavenderblush; */
+    background: lavenderblush;
+} */
+
+header{
+    padding: 20px 10px;
+
+}
+.wrap-menu{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.menu a{
+    color: #000;
+}
+
+.nav{
+    display: flex;
+    gap: 20px;
+}
+.icon-box{
+    font-size: 24px;
+}
+.nav-item a{
+    display: block;
+    padding: 5px 30px;
+}
+.icon {
+    font-size: 20px;
+    color: black;
+}
+
+.icon:hover {
+    cursor: pointer;
+    color: #960021;
+    transition: .3s;
+}
+
+#logo{
+    text-align: center;
 }
 
 #logo img {
     width: 150px;
     height: auto;
-    margin: 20px 0 0 650px;
 }
 
 #logo li {
@@ -122,30 +166,6 @@ a:active {
     font-size: 15px;
     margin-left: 80px;
     padding-top: 25px;
-}
-
-.fa-bell {
-    font-size: 20px;
-    color: black;
-    margin: 10px 0 0 342px;
-}
-
-.fa-bell:hover {
-    cursor: pointer;
-    color: #960021;
-    transition: .3s;
-}
-
-.fa-user {
-    font-size: 20px;
-    color: black;
-    margin: 10px 0 0 30px;
-}
-
-.fa-user:hover {
-    cursor: pointer;
-    color: #960021;
-    transition: .3s;
 }
 
 .banner img {
