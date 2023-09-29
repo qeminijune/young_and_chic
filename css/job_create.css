@@ -1,0 +1,208 @@
+@import url('https://fonts.cdnfonts.com/css/gentium-basic');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    /* font-family: 'Nunito', sans-serif; */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    /* border: none; */
+    text-decoration: none;
+    transition: all .2s linear;
+    text-transform: capitalize;
+}
+
+#wrapper {
+    width: 1440px;
+    height: auto;
+    margin: 0 auto;
+}
+
+header {
+    width: 100%;
+}
+
+.post {
+    width: 1043px;
+    height: auto;
+    box-shadow: 0px 0px 8px lightgray;
+    border-radius: 15px;
+    margin: 200px;
+}
+
+.post h1 {
+    font-family: 'Gentium Basic', sans-serif;
+    font-size: 32px;
+    color: black;
+    padding: 50px 0 0 50px;
+}
+
+.circle {
+    width: 45px;
+    height: 45px;
+    border-radius: 50px;
+    background-color: #960021;
+    float: left;
+    margin-left: 100px;
+    margin-top: 30px;
+    font-family: 'Gentium Basic', sans-serif;
+    text-align: center;
+    padding-top: 11px;
+    color: white;
+    font-size: 20px;
+}
+
+.circle1 {
+    width: 45px;
+    height: 45px;
+    border-radius: 50px;
+    background-color: #960021;
+    float: left;
+    margin-left: 355px;
+    margin-top: 30px;
+    font-family: 'Gentium Basic', sans-serif;
+    text-align: center;
+    padding-top: 11px;
+    color: white;
+    font-size: 20px;
+}
+
+.circle hr {
+    width: 230px;
+    margin-top: -12px;
+    margin-left: 100px;
+    float: left;
+}
+
+.circle1 hr {
+    width: 230px;
+    margin-top: -12px;
+    margin-left: 100px;
+    float: left;
+}
+
+.upload p {
+    font-family: 'Gentium Basic', sans-serif;
+    color: black;
+    font-size: 32px;
+    margin: 150px 0 0 50px;
+}
+
+.container {
+    height: 100%;
+    margin-left: 100px;
+    margin-top: 50px;
+}
+
+.file-drop-area {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 845px;
+    height: 432px;
+    max-width: 100%;
+    padding: 25px;
+    background-color: #fff;
+    justify-content: center;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+    transition: .3s;
+}
+
+.file-drop-area.is-active {
+    background-color: #1a1a1a;
+}
+
+.fake-btn {
+    flex-shrink: 0;
+    background-color: #960021;
+    border-radius: 7px;
+    padding: 8px 15px;
+    margin-right: 10px;
+    font-size: 20px;
+    color: white;
+    font-family: 'Gentium Basic', sans-serif;
+}
+
+.file-msg {
+    color: #9699b3;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.item-delete {
+    display: none;
+    position: absolute;
+    right: 10px;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.item-delete:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    transition: .3s;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg fill='%23bac1cb' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 438.5 438.5'%3e%3cpath d='M417.7 75.7A8.9 8.9 0 00411 73H323l-20-47.7c-2.8-7-8-13-15.4-18S272.5 0 264.9 0h-91.3C166 0 158.5 2.5 151 7.4c-7.4 5-12.5 11-15.4 18l-20 47.7H27.4a9 9 0 00-6.6 2.6 9 9 0 00-2.5 6.5v18.3c0 2.7.8 4.8 2.5 6.6a8.9 8.9 0 006.6 2.5h27.4v271.8c0 15.8 4.5 29.3 13.4 40.4a40.2 40.2 0 0032.3 16.7H338c12.6 0 23.4-5.7 32.3-17.2a64.8 64.8 0 0013.4-41V109.6h27.4c2.7 0 4.9-.8 6.6-2.5a8.9 8.9 0 002.6-6.6V82.2a9 9 0 00-2.6-6.5zm-248.4-36a8 8 0 014.9-3.2h90.5a8 8 0 014.8 3.2L283.2 73H155.3l14-33.4zm177.9 340.6a32.4 32.4 0 01-6.2 19.3c-1.4 1.6-2.4 2.4-3 2.4H100.5c-.6 0-1.6-.8-3-2.4a32.5 32.5 0 01-6.1-19.3V109.6h255.8v270.7z'/%3e%3cpath d='M137 347.2h18.3c2.7 0 4.9-.9 6.6-2.6a9 9 0 002.5-6.6V173.6a9 9 0 00-2.5-6.6 8.9 8.9 0 00-6.6-2.6H137c-2.6 0-4.8.9-6.5 2.6a8.9 8.9 0 00-2.6 6.6V338c0 2.7.9 4.9 2.6 6.6a8.9 8.9 0 006.5 2.6zM210.1 347.2h18.3a8.9 8.9 0 009.1-9.1V173.5c0-2.7-.8-4.9-2.5-6.6a8.9 8.9 0 00-6.6-2.6h-18.3a8.9 8.9 0 00-9.1 9.1V338a8.9 8.9 0 009.1 9.1zM283.2 347.2h18.3c2.7 0 4.8-.9 6.6-2.6a8.9 8.9 0 002.5-6.6V173.6c0-2.7-.8-4.9-2.5-6.6a8.9 8.9 0 00-6.6-2.6h-18.3a9 9 0 00-6.6 2.6 8.9 8.9 0 00-2.5 6.6V338a9 9 0 002.5 6.6 9 9 0 006.6 2.6z'/%3e%3c/svg%3e");
+}
+
+.item-delete:after {
+    content: "";
+    position: absolute;
+    opacity: 0;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%) scale(0);
+    background-color: #f3dbff;
+    border-radius: 50%;
+    transition: .3s;
+}
+
+.item-delete:hover:after {
+    transform: translate(-50%, -50%) scale(2.2);
+    opacity: 1;
+}
+
+.item-delete:hover:before {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg fill='%234f555f' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 438.5 438.5'%3e%3cpath d='M417.7 75.7A8.9 8.9 0 00411 73H323l-20-47.7c-2.8-7-8-13-15.4-18S272.5 0 264.9 0h-91.3C166 0 158.5 2.5 151 7.4c-7.4 5-12.5 11-15.4 18l-20 47.7H27.4a9 9 0 00-6.6 2.6 9 9 0 00-2.5 6.5v18.3c0 2.7.8 4.8 2.5 6.6a8.9 8.9 0 006.6 2.5h27.4v271.8c0 15.8 4.5 29.3 13.4 40.4a40.2 40.2 0 0032.3 16.7H338c12.6 0 23.4-5.7 32.3-17.2a64.8 64.8 0 0013.4-41V109.6h27.4c2.7 0 4.9-.8 6.6-2.5a8.9 8.9 0 002.6-6.6V82.2a9 9 0 00-2.6-6.5zm-248.4-36a8 8 0 014.9-3.2h90.5a8 8 0 014.8 3.2L283.2 73H155.3l14-33.4zm177.9 340.6a32.4 32.4 0 01-6.2 19.3c-1.4 1.6-2.4 2.4-3 2.4H100.5c-.6 0-1.6-.8-3-2.4a32.5 32.5 0 01-6.1-19.3V109.6h255.8v270.7z'/%3e%3cpath d='M137 347.2h18.3c2.7 0 4.9-.9 6.6-2.6a9 9 0 002.5-6.6V173.6a9 9 0 00-2.5-6.6 8.9 8.9 0 00-6.6-2.6H137c-2.6 0-4.8.9-6.5 2.6a8.9 8.9 0 00-2.6 6.6V338c0 2.7.9 4.9 2.6 6.6a8.9 8.9 0 006.5 2.6zM210.1 347.2h18.3a8.9 8.9 0 009.1-9.1V173.5c0-2.7-.8-4.9-2.5-6.6a8.9 8.9 0 00-6.6-2.6h-18.3a8.9 8.9 0 00-9.1 9.1V338a8.9 8.9 0 009.1 9.1zM283.2 347.2h18.3c2.7 0 4.8-.9 6.6-2.6a8.9 8.9 0 002.5-6.6V173.6c0-2.7-.8-4.9-2.5-6.6a8.9 8.9 0 00-6.6-2.6h-18.3a9 9 0 00-6.6 2.6 8.9 8.9 0 00-2.5 6.6V338a9 9 0 002.5 6.6 9 9 0 006.6 2.6z'/%3e%3c/svg%3e");
+}
+
+.file-input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.file-input:focus {
+    outline: none;
+}
+
+.btn-next {
+    width: 135px;
+    height: 45px;
+    color: white;
+    background-color: #960021;
+    border: none;
+    border-radius: 50px;
+    font-family: 'Gentium Basic', sans-serif;
+    font-size: 20px;
+    margin: 50px 0 50px 700px;
+}

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobs</title>
+
+    <link href="https://fonts.cdnfonts.com/css/gentium-basic" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" type="text/css" href="css/job.css">
+    <!-- custom js file link  -->
+    <script src="js/script.js" defer></script>
+
+    <script>
+        /* When the user clicks on the button,toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        function filterFunction() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            div = document.getElementById("myDropdown");
+            a = div.getElementsByTagName("a");
+            for (i = 0; i < a.length; i++) {
+                txtValue = a[i].textContent || a[i].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    a[i].style.display = "";
+                } else {
+                    a[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <!-- <header>
+        <div id="head">
+            <div class="menu">
+                <div id="logo">
+                    <a href="index.html">
+                        <img src="images/logoY&C.png">
+                    </a>
+                </div>
+                <div id="menu-list">
+                    <li>
+                        <a href="/foryou.html">For You</a>
+                    </li>
+                    <li><a href="/profile.html">Profile</a></li>
+                    <li><a href="/discover.html">Discover</a></li>
+                </div>
+                <div class="active">
+                    <li><a href="/job.html">Jobs</a></li>
+                </div>
+
+                <i class="fas fa-bell"></i>
+                <i class="fas fa-user"></i>
+            </div>
+
+            <div class="banner">
+                <img src="images/job_banner.jpg">
+                <h1>Designer Job</h1>
+                <p>Discover your next career move, freelance gig, or internship</p>
+            </div>
+        </div>
+    </header> -->
+    <header>
+        <div class="header-container">
+            <div class="wrap-logo">
+                <a href="index.html">
+                    <img src="images/logoY&C.png">
+                </a>
+            </div>
+            <div class="wrap-menu">
+                <div class="menu"><a href="/foryou.html">For You</a></div>
+                <div class="menu"><a href="/profile.html">Profile</a></div>
+                <div class="menu"><a href="/discover.html">Discover</a></div>
+                <div class="menu"><a href="/job.html">Jobs</a></div>
+            </div>
+            <div class="wrap-menu">
+                <div class="menu"><i class="fas fa-bell"></i></div>
+                <div class="menu"><i class="fas fa-user"></i></div>
+            </div>
+        </div>
+    </header>
+    <div id="wrapper">
+        <section>
+            <div class="freelance">
+                <h1>Freelance (25)</h1>
+                <p>Full-Time (17)</p>
+                <hr>
+            </div>
+
+            <div class="box">
+                <!-- <i class="fas fa-search"></i> -->
+                <input id="search-job" type="text" name="search" placeholder="Search jobs by keyword... ">
+                <style>
+                    .dropdown {
+                        margin-top: -57px;
+                        margin-right: 140px;
+                        float: right;
+                    }
+                    
+                    .dropbtn {
+                        width: 220px;
+                        height: 40px;
+                        background-color: #f4f4f4;
+                        color: black;
+                        padding: 10px;
+                        font-size: 20px;
+                        border: none;
+                        border-radius: 10px;
+                        cursor: pointer;
+                        margin-top: 7px;
+                        font-family: 'Gentium Book Basic', sans-serif;
+                    }
+                    
+                    .dropbtn:hover,
+                    .dropbtn:focus {
+                        background-color: #960021;
+                        color: white;
+                    }
+                    
+                    .fa-caret-down {
+                        padding-left: 10px;
+                    }
+                    /* #myInput {
+                        box-sizing: border-box;
+                        background-image: url('searchicon.png');
+                        background-position: 14px 12px;
+                        background-repeat: no-repeat;
+                        font-size: 16px;
+                        padding: 14px 20px 12px 45px;
+                        border: none;
+                        border-bottom: 1px solid #ddd;
+                    } */
+                    
+                    #myInput:focus {
+                        outline: 3px solid #ddd;
+                    }
+                    
+                    .dropdown {
+                        position: relative;
+                        display: inline-block;
+                    }
+                    
+                    .dropdown-content {
+                        display: none;
+                        position: absolute;
+                        background-color: #f6f6f6;
+                        min-width: 230px;
+                        overflow: auto;
+                        /* border: 1px solid #ddd; */
+                        box-shadow: 3px 5px 8px lightgray;
+                        z-index: 1;
+                        border-radius: 10px;
+                        margin-top: 10px;
+                    }
+                    
+                    .dropdown-content a {
+                        color: black;
+                        padding: 12px 16px;
+                        text-decoration: none;
+                        display: block;
+                        font-size: 16px;
+                    }
+                    
+                    .dropdown a:hover {
+                        background-color: gray;
+                        color: white;
+                    }
+                    
+                    .show {
+                        display: block;
+                    }
+                </style>
+
+                <div class="dropdown">
+                    <button onclick="myFunction()" class="dropbtn">All Designer Field <i class="fas fa-caret-down"></i></button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="#">Assistant Designer</a>
+                        <a href="#">Costome Designer</a>
+                        <a href="#">Freelance Designer</a>
+                        <a href="#">Pattern maker</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <h3 class="title">25 Freelance Jobs</h3>
+                <div class="button" data-name-post="p-1">
+                    <button>Post a Job</button>
+                </div>
+                <div class="products-container">
+                    <div class="product" data-name="p-1">
+                        <img src="images/job1.jpg" alt="">
+                        <h3>Name</h3>
+                        <div class="price">Dorem ipsum dolor sit amet</div>
+                        <h4>Morem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</h4>
+                    </div>
+
+                    <div class="product" data-name="p-2">
+                        <img src="images/job2.jpg" alt="">
+                        <h3>Name</h3>
+                        <div class="price">Dorem ipsum dolor sit amet</div>
+                        <h4>Morem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</h4>
+                    </div>
+
+                    <div class="product" data-name="p-3">
+                        <img src="images/job3.jpg" alt="">
+                        <h3>Name</h3>
+                        <div class="price">Dorem ipsum dolor sit amet</div>
+                        <h4>Morem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</h4>
+                    </div>
+
+                    <div class="product" data-name="p-4">
+                        <img src="images/job4.jpg" alt="">
+                        <h3>Name</h3>
+                        <div class="price">Dorem ipsum dolor sit amet</div>
+                        <h4>Morem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</h4>
+                    </div>
+
+                    <div class="product" data-name="p-5">
+                        <img src="images/job5.jpg" alt="">
+                        <h3>Name</h3>
+                        <div class="price">Dorem ipsum dolor sit amet</div>
+                        <h4>Morem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</h4>
+                    </div>
+
+                    <div class="product" data-name="p-6">
+                        <img src="images/job6.jpg" alt="">
+                        <h3>Name</h3>
+                        <div class="price">Dorem ipsum dolor sit amet</div>
+                        <h4>Morem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</h4>
+                    </div>
+
+                    <div class="product" data-name="p-7">
+                        <img src="images/job7.jpg" alt="">
+                        <h3>Name</h3>
+                        <div class="price">Dorem ipsum dolor sit amet</div>
+                        <h4>Morem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</h4>
+                    </div>
+
+                    <div class="product" data-name="p-8">
+                        <img src="images/job8.jpg" alt="">
+                        <h3>Name</h3>
+                        <div class="price">Dorem ipsum dolor sit amet</div>
+                        <h4>Morem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</h4>
+                    </div>
+
+                    <div class="product" data-name="p-9">
+                        <img src="images/job9.jpg" alt="">
+                        <h3>Name</h3>
+                        <div class="price">Dorem ipsum dolor sit amet</div>
+                        <h4>Morem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</h4>
+                    </div>
+
+                    <div class="product" data-name="p-10">
+                        <img src="images/job10.jpg" alt="">
+                        <h3>Name</h3>
+                        <div class="price">Dorem ipsum dolor sit amet</div>
+                        <h4>Morem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</h4>
+                    </div>
+
+                    <div class="product" data-name="p-11">
+                        <img src="images/job11.jpg" alt="">
+                        <h3>Name</h3>
+                        <div class="price">Dorem ipsum dolor sit amet</div>
+                        <h4>Morem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</h4>
+                    </div>
+
+                    <div class="product" data-name="p-12">
+                        <img src="images/job12.jpg" alt="">
+                        <h3>Name</h3>
+                        <div class="price">Dorem ipsum dolor sit amet</div>
+                        <h4>Morem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</h4>
+                    </div>
+                </div>
+            </div>
+
+            <footer>
+                <div id="footer">
+                    <div class="help">
+                        <p>HELP</p>
+                        <h1>Team & Condition</h1>
+                        <a href="index.html">
+                            <img src="images/logo-white.png">
+                        </a>
+
+                        <h2>About Us</h2>
+                        <h3>Privacy Policy</h3>
+
+                        <h4>Newsletter</h4>
+                        <div id="signup">
+                            <label for="fname">Sign Up to receive news update</label><br>
+                        </div>
+                        <input type="text" id="username" name="username" value="" placeholder="Enter email address"><br>
+
+                        <input id="search" type="text" name="search" placeholder="Search... "><i class="fas fa-search"></i>
+
+                        <h5>COPYRIGHT © ALL RIGHTS RESERVED LOGO</h5>
+                    </div>
+                </div>
+            </footer>
+
+            <div class="products-preview">
+                <div class="preview" data-target="p-1">
+                    <i class="fas fa-times"></i>
+                    <img src="images/job1.jpg" alt="">
+                    <h3>Name</h3>
+                    <div class="price">Dorem ipsum dolor sit amet</div>
+                    <p>Morem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</p>
+                    <div class="buttons">
+                        <a href="#" class="apply">Apply</a>
+                    </div>
+                    <div class="button1">
+                        <a href="#" class="save">Save Job</a>
+                    </div>
+                </div>
+
+                <div class="preview" data-target="p-2">
+                    <i class="fas fa-times"></i>
+                    <img src="images/job2.jpg" alt="">
+                    <h3>Name</h3>
+                    <div class="price">Dorem ipsum dolor sit amet</div>
+                    <p>Morem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</p>
+                    <div class="buttons">
+                        <a href="#" class="apply">Apply</a>
+                    </div>
+                    <div class="button1">
+                        <a href="#" class="save">Save Job</a>
+                    </div>
+                </div>
+
+                <div class="preview" data-target="p-3">
+                    <i class="fas fa-times"></i>
+                    <img src="images/job3.jpg" alt="">
+                    <h3>Name</h3>
+                    <div class="price">Dorem ipsum dolor sit amet</div>
+                    <p>Morem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</p>
+                    <div class="buttons">
+                        <a href="#" class="apply">Apply</a>
+                    </div>
+                    <div class="button1">
+                        <a href="#" class="save">Save Job</a>
+                    </div>
+                </div>
+
+                <div class="preview" data-target="p-4">
+                    <i class="fas fa-times"></i>
+                    <img src="images/job4.jpg" alt="">
+                    <h3>Name</h3>
+                    <div class="price">Dorem ipsum dolor sit amet</div>
+                    <p>Morem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</p>
+                    <div class="buttons">
+                        <a href="#" class="apply">Apply</a>
+                    </div>
+                    <div class="button1">
+                        <a href="#" class="save">Save Job</a>
+                    </div>
+                </div>
+
+                <div class="preview" data-target="p-5">
+                    <i class="fas fa-times"></i>
+                    <img src="images/job5.jpg" alt="">
+                    <h3>Name</h3>
+                    <div class="price">Dorem ipsum dolor sit amet</div>
+                    <p>Morem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</p>
+                    <div class="buttons">
+                        <a href="#" class="apply">Apply</a>
+                    </div>
+                    <div class="button1">
+                        <a href="#" class="save">Save Job</a>
+                    </div>
+                </div>
+
+                <div class="preview" data-target="p-6">
+                    <i class="fas fa-times"></i>
+                    <img src="images/job6.jpg" alt="">
+                    <h3>Name</h3>
+                    <div class="price">Dorem ipsum dolor sit amet</div>
+                    <p>Morem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</p>
+                    <div class="buttons">
+                        <a href="#" class="apply">Apply</a>
+                    </div>
+                    <div class="button1">
+                        <a href="#" class="save">Save Job</a>
+                    </div>
+                </div>
+
+                <div class="preview" data-target="p-7">
+                    <i class="fas fa-times"></i>
+                    <img src="images/job7.jpg" alt="">
+                    <h3>Name</h3>
+                    <div class="price">Dorem ipsum dolor sit amet</div>
+                    <p>Morem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</p>
+                    <div class="buttons">
+                        <a href="#" class="apply">Apply</a>
+                    </div>
+                    <div class="button1">
+                        <a href="#" class="save">Save Job</a>
+                    </div>
+                </div>
+
+                <div class="preview" data-target="p-8">
+                    <i class="fas fa-times"></i>
+                    <img src="images/job8.jpg" alt="">
+                    <h3>Name</h3>
+                    <div class="price">Dorem ipsum dolor sit amet</div>
+                    <p>Morem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</p>
+                    <div class="buttons">
+                        <a href="#" class="apply">Apply</a>
+                    </div>
+                    <div class="button1">
+                        <a href="#" class="save">Save Job</a>
+                    </div>
+                </div>
+
+                <div class="preview" data-target="p-9">
+                    <i class="fas fa-times"></i>
+                    <img src="images/job9.jpg" alt="">
+                    <h3>Name</h3>
+                    <div class="price">Dorem ipsum dolor sit amet</div>
+                    <p>Morem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</p>
+                    <div class="buttons">
+                        <a href="#" class="apply">Apply</a>
+                    </div>
+                    <div class="button1">
+                        <a href="#" class="save">Save Job</a>
+                    </div>
+                </div>
+
+                <div class="preview" data-target="p-10">
+                    <i class="fas fa-times"></i>
+                    <img src="images/job10.jpg" alt="">
+                    <h3>Name</h3>
+                    <div class="price">Dorem ipsum dolor sit amet</div>
+                    <p>Morem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</p>
+                    <div class="buttons">
+                        <a href="#" class="apply">Apply</a>
+                    </div>
+                    <div class="button1">
+                        <a href="#" class="save">Save Job</a>
+                    </div>
+                </div>
+
+                <div class="preview" data-target="p-11">
+                    <i class="fas fa-times"></i>
+                    <img src="images/job11.jpg" alt="">
+                    <h3>Name</h3>
+                    <div class="price">Dorem ipsum dolor sit amet</div>
+                    <p>Morem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</p>
+                    <div class="buttons">
+                        <a href="#" class="apply">Apply</a>
+                    </div>
+                    <div class="button1">
+                        <a href="#" class="save">Save Job</a>
+                    </div>
+                </div>
+
+                <div class="preview" data-target="p-12">
+                    <i class="fas fa-times"></i>
+                    <img src="images/job12.jpg" alt="">
+                    <h3>Name</h3>
+                    <div class="price">Dorem ipsum dolor sit amet</div>
+                    <p>Morem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</p>
+                    <div class="buttons">
+                        <a href="#" class="apply">Apply</a>
+                    </div>
+                    <div class="button1">
+                        <a href="#" class="save">Save Job</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

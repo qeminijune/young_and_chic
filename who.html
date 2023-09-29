@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who Are You</title>
+
+    <link rel="stylesheet" type="text/css" href="css/who.css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <div class="login">
+                <img src="images/pic-login.jpg">
+                <div class="login1">
+                    <img src="images/Welcome.png">
+                </div>
+            </div>
+        </header>
+
+        <section>
+            <div id="logo">
+                <a href="index.html">
+                    <img src="images/logoY&C.png">
+                </a>
+            </div>
+
+            <form action="/auth/usertype" method="POST">
+                <!-- @csrf -->
+                <input name="type" type="hidden" value="participant">
+                <button type="submit" class="btn btn-primary">Participant</button>
+            </form>
+            <form action="/auth/usertype" method="POST">
+                <!-- @csrf -->
+                <input name="type" type="hidden" value="designer">
+                <button type="submit" class="btn btn-primary">Young Designer</button>
+            </form>
+        </section>
+    </div>
+</body>
+
+</html>
