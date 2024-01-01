@@ -55,3 +55,9 @@ $delete.on('click', function() {
     $('.file-msg').text('or drop files here');
     $('.item-delete').css('display', 'none');
 });
+
+var carousel = $(".carousel"),
+    currdeg = 0;
+
+$(".next").on("click", { d: "n" }, rotate);
+$(".prev").on("click", { d: "p" }, rotate);

@@ -37,6 +37,7 @@ body {
     margin: 0 auto;
 }
 
+
 /* header {
     width: 100%;
 }
@@ -61,36 +62,78 @@ body {
     background: lavenderblush;
 } */
 
-header{
+header {
     padding: 20px 10px;
-
 }
-.wrap-menu{
-    max-width: 1000px;
+
+.wrap-menu {
+    max-width: 1100px;
     margin: 0 auto;
-}
-.menu{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 10px;
+    /* display: flex;
+    justify-content: flex-end;
+    align-items: center; */
 }
 
-.menu a{
-    color: #000;
+.menu {
+    /* width: 100%;
+    height: 150px; */
+    /* background: lavenderblush; */
 }
 
-.nav{
-    display: flex;
-    gap: 20px;
+#logo img {
+    width: 150px;
+    height: auto;
+    /* margin: 20px 0 0 650px; */
 }
-.icon-box{
+
+
+/* #logo li {
+    list-style: none;
+    margin-left: 670px;
+    padding-top: 20px;
+    float: left;
+} */
+
+
+/* #logo li a {
+    font-family: 'Gentium Basic', sans-serif;
+    font-size: 50px;
+    color: black;
+    text-decoration: none;
+    font-weight: normal;
+} */
+
+.nav a {
+    font-family: 'Gentium Basic', sans-serif;
+    font-size: 15px;
+    text-decoration: none;
+    color: black;
+    font-weight: lighter;
+}
+
+.nav-item1 a {
+    font-family: 'Gentium Basic', sans-serif;
+    font-size: 15px;
+    text-decoration: underline;
+    color: #960021;
+    font-weight: lighter;
+}
+
+.nav {
+    display: flex;
+}
+
+.icon-box {
     font-size: 24px;
+    /* background-color: #111; */
+    margin: 20px 0 0 10px;
 }
-.nav-item a{
+
+.nav-item a {
     display: block;
     padding: 5px 30px;
 }
+
 .icon {
     font-size: 20px;
     color: black;
@@ -102,23 +145,25 @@ header{
     transition: .3s;
 }
 
-#logo{
+.fa-bell {
+    margin-left: 340px;
+}
+
+.fa-user {
+    margin-left: 20px;
+}
+
+#logo {
     text-align: center;
 }
 
-#logo img {
+
+/* #logo img {
     width: 150px;
     height: auto;
-}
+} */
 
-#logo li {
-    list-style: none;
-    margin-left: 670px;
-    padding-top: 20px;
-    float: left;
-}
-
-#logo li a {
+#logo a {
     font-family: 'Gentium Basic', sans-serif;
     font-size: 50px;
     color: black;
@@ -128,7 +173,7 @@ header{
 
 #menu-list {
     float: left;
-    margin-left: 441px;
+    margin-left: 270px;
 }
 
 #menu-list li {
@@ -169,8 +214,8 @@ a:active {
 }
 
 .banner img {
-    max-width: 100%;
-    height: 576px;
+    width: 100%;
+    height: auto;
     margin-top: 30px;
 }
 
@@ -196,7 +241,7 @@ a:active {
     font-family: 'Gentium Basic', sans-serif;
     font-size: 20px;
     color: black;
-    margin-top: 280px;
+    margin-top: 20px;
     margin-left: 99px;
     font-weight: normal;
 }
@@ -210,7 +255,7 @@ a:active {
 }
 
 .freelance hr {
-    /* width: 1241px; */
+    width: 1241px;
     margin-left: 99px;
     margin-top: 20px;
     color: #D9DADB;
@@ -269,10 +314,10 @@ a:active {
     font-family: 'Gentium Basic', sans-serif;
     font-weight: normal;
     font-size: 20px;
-    margin-top: -50px;
+    margin-top: -20px;
     margin-left: 990px;
     border: none;
-    float: left;
+    /* float: left; */
 }
 
 .button button:hover {
@@ -603,3 +648,47 @@ a:active {
     margin-left: 100px;
     margin-top: 65px;
 }
+
+
+/* (A) LIST VIEW BY DEFAULT */
+
+#demo {
+    /* (A1) REMOVE BULLETS & IDENTATION */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    /* (A2) LIST VIEW - 1 ITEM PER ROW */
+    display: grid;
+    grid-template-columns: 100%;
+    grid-gap: 5px;
+}
+
+
+/* (B) LIST ITEMS */
+
+#demo li {
+    padding: 10px;
+    /* border: 1px solid #ddd; */
+}
+
+#demo li:nth-child(odd) {
+    /* background: #f7f7f7; */
+}
+
+
+/* (C) GRID VIEW - 3 ITEMS PER ROW */
+
+#demo.grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.product1 {
+    width: 1240px;
+    height: 230px;
+    margin: 20px 0 0 100px;
+    background-color: white;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    border-radius: 10px;
+}
+
+.product1 img {}

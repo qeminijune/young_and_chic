@@ -7,9 +7,33 @@
     <title>Home</title>
 
     <link href="https://fonts.cdnfonts.com/css/gentium-basic" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/priyati" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script src="js/silde.js" defer></script>
+
+    <script>
+        /* When the user clicks on the button, 
+                                                                                                                                                                                toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -19,96 +43,152 @@
                 <div class="menu">
                     <div id="logo">
                         <a href="index.html">
-                            <img src="images/logoY&C.png">
+                            <img src="images/logo-final.png">
                         </a>
                     </div>
                     <ul id="menu-list">
                         <li>
                             <a href="/foryou.html">For You</a>
                         </li>
-                        <li><a href="/profile.html">Profile</a></li>
+                        <li><a href="/job.html">Find a Team</a></li>
                         <li><a href="/discover.html">Discover</a></li>
-                        <li><a href="/job.html">Jobs</a></li>
+                        <li><a href="/profile.html">Profile</a></li>
                     </ul>
 
                     <i class="fas fa-bell"></i>
-                    <i class="fas fa-user"></i>
+                    <!-- <i class="fas fa-user"></i> -->
+
+                    <div class="dropdown">
+                        <button onclick="myFunction()" class="dropbtn">Account</button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <a href="/upload.html">Profile</a>
+                            <a href="/mn.profile.html">Manage profile</a>
+                            <a href="/bookmarks.html">Bookmarks</a>
+                            <a href="/savejobs.html">Save a Jobs</a>
+                            <a href="#">Log out</a>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="banner">
-                    <img src="images/banner-home.jpg">
+                    <img src="images/banner-home.png">
                 </div>
             </div>
         </header>
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+        <section>
+            <video id="myvideo" autoplay loop muted controls>
+                <source src="video/event.mp4" type="video/mp4">
+            </video>
+
+            <div class="event">
+                <!-- <img src="images/event-home.jpg"> -->
+                <h1>A DAY OF FASHION</h1>
+                <p>YOUNG & CHIC</p>
+                <h2>YOUNG & CHIC FASHION EVENT
+                    <br>OCTOBER 22-22 NOVEMBER 2024.</h2>
+                <a href="/event.html" class="b1"><button>VIEW THIS EVENT</button></a>
+                <a href="/all_event.html" class="b2"><button>VIEW ALL EVENT</button></a>
+            </div>
+            <!-- <div style="width:100%;height:0px;position:relative;padding-bottom:56.250%;"><iframe src="https://streamable.com/e/ht8el5" frameborder="0" width="100%" height="100%" allowfullscreen style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;"></iframe></div> -->
+        </section>
 
         <section>
-            <div class="event">
-                <img src="images/event-home.jpg">
-                <h1>EVENT</h1>
-                <p>Autumn Winter 2023 “Working Woman”</p>
-                <a href="/event.html"><button>VIEW EVENT</button></a>
+            <div class="caption">
+                <img src="/images/sunshine.png">
+                <!-- <p>Shine up to<br>The young designer</p> -->
             </div>
         </section>
 
         <section>
             <div class="work-de">
+                <hr>
                 <img src="images/Best_Designer.png">
                 <h1>Working Of The Month</h1>
                 <h2>Best Young Designer<br>Of The Month</h2>
-                <h3>THANADOL</h3>
-                <a href="#"><button>VIEW WORKINGS</button></a>
+                <h3>(November)</h3>
+                <h4>THANADOL</h4>
             </div>
         </section>
+
+        <!-- <section>
+            <div class="carousel">
+                <div class="card-carousel">
+                    <div class="my-card">
+                        <img src="images/work_yde1.jpg">
+                    </div>
+                    <div class="my-card">
+                        <img src="images/work_yde2.jpg">
+                    </div>
+                    <div class="my-card">
+                        <img src="images/work_yde3.jpg">
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <section id="slide">
+            <!-- <div class="prev"><i class="fas fa-chevron-left"></i></div> -->
+            <input class="slide" type="radio" name="position" />
+            <input class="slide" type="radio" name="position" checked/>
+            <input class="slide" type="radio" name="position" />
+            <input class="slide" type="radio" name="position" />
+            <input class="slide" type="radio" name="position" />
+            <main id="carousel">
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+            </main>
+            <!-- <div class="next"><i class="fas fa-chevron-right"></i></div> -->
+        </section>
+        <div class="view-all">
+            <a href="#"><button>View All Works By Young Designer</button><i class="fas fa-chevron-right"></i></a>
+        </div>
 
         <section>
             <div class="de-work">
                 <hr>
-                <p>Designer's Work</p>
-                <div class="designer-work">
-                    <div class="work" data-name="d-1">
-                        <img src="images/de-work-1.jpg" alt="">
-                        <h3>Name</h3>
-                        <div class="price">Like</div>
-                        <h4>Comment</h4>
-                    </div>
+                <p>Young Designer's Works (350)</p>
+                <div class="p1"><img src="images/Frame 28.jpg"></div>
+                <div class="p2"><img src="images/Frame 29.jpg"></div>
+                <div class="p3"><img src="images/Frame 30.jpg"></div>
+                <div class="p4"><img src="images/Frame 31.jpg"></div>
+                <div class="p5"><img src="images/Frame 32.jpg"></div>
+                <div class="p6"><img src="images/Frame 33.jpg"></div>
+                <div class="p7"><img src="images/Frame 34.jpg"></div>
+                <div class="p8"><img src="images/Frame 20.jpg"></div>
+                <div class="p9"><img src="images/Frame 21.jpg"></div>
+                <div class="p10"><img src="images/Frame 22.jpg"></div>
+                <div class="p11"><img src="images/Frame 25.jpg"></div>
+                <div class="p12"><img src="images/Frame 26.jpg"></div>
+                <div class="p13"><img src="images/Frame 27.jpg"></div>
+                <div class="p14"><img src="images/Frame 11.jpg"></div>
+                <div class="p15"><img src="images/Frame 12.jpg"></div>
+                <div class="p16"><img src="images/Frame 13.jpg"></div>
+                <div class="p17"><img src="images/Frame 14.jpg"></div>
+                <div class="p18"><img src="images/Frame 15.jpg"></div>
+                <div class="p19"><img src="images/Frame 16.jpg"></div>
+                <div class="p20"><img src="images/Frame 17.jpg"></div>
+                <div class="p21"><img src="images/Frame 24.jpg"></div>
 
-                    <div class="work" data-name="d-2">
-                        <img src="images/de-work-2.jpg" alt="">
-                        <h3>Name</h3>
-                        <div class="price">Like</div>
-                        <h4>Comment</h4>
-                    </div>
+                <a href="#"><button>SEE MORE</button><i class="fas fa-chevron-right"></i></a>
+            </div>
+        </section>
 
-                    <div class="work" data-name="d-3">
-                        <img src="images/de-work-3.jpg" alt="">
-                        <h3>Name</h3>
-                        <div class="price">Like</div>
-                        <h4>Comment</h4>
-                    </div>
-
-                    <div class="work" data-name="d-4">
-                        <img src="images/de-work-4.jpg" alt="">
-                        <h3>Name</h3>
-                        <div class="price">Like</div>
-                        <h4>Comment</h4>
-                    </div>
-
-                    <div class="work" data-name="d-5">
-                        <img src="images/de-work-5.jpg" alt="">
-                        <h3>Name</h3>
-                        <div class="price">Like</div>
-                        <h4>Comment</h4>
-                    </div>
-
-                    <div class="work" data-name="d-6">
-                        <img src="images/de-work-6.jpg" alt="">
-                        <h3>Name</h3>
-                        <div class="price">Like</div>
-                        <h4>Comment</h4>
-                    </div>
-
-                    <a href="#"><button>VIEW MORE</button></a>
-                </div>
+        <section>
+            <div class="parti">
+                <p>Participant</p>
+                <h1>ผู้ช่วยสำหรับ Young Designer ที่จะทำให้คุณทำงานได้เร็วและมีประสิทธิภาพมากขึ้น
+                    <br>เพียงแค่โพสต์ตำแหน่งทีมงานที่คุณต้องการให้มาช่วย ก็สามารถมีผู้ช่วยทีมได้เลย!
+                    <br>สำหรับ Participant ที่ต้องการดีลกับ Young Designer
+                    <br>สามารถกด Apply Job ที่คุณสนใจได้ที่นี่เลย!</h1>
+                <a href="#"><button>VIEW POST A JOB PAGE</button><i class="fas fa-chevron-right"></i></a>
+                <div class="d1"><img src="images/Rectangle 707.jpg"></div>
+                <div class="d2"><img src="images/Rectangle 710.jpg"></div>
+                <div class="d3"><img src="images/Rectangle 711.jpg"></div>
+                <div class="d4"><img src="images/Rectangle 708.jpg"></div>
+                <div class="d5"><img src="images/Rectangle 706.jpg"></div>
             </div>
         </section>
 
@@ -118,26 +198,79 @@
                     <p>HELP</p>
                     <h1>Team & Condition</h1>
                     <a href="index.html">
-                        <img src="images/logo-white.png">
+                        <img src="images/logo-white 1.png">
                     </a>
-
                     <h2>About Us</h2>
                     <h3>Privacy Policy</h3>
-
                     <h4>Newsletter</h4>
                     <!-- <h1>Sign Up to receive news update</h1> -->
                     <div id="signup">
                         <label for="fname">Sign Up to receive news update</label><br>
                     </div>
+
                     <input type="text" id="username" name="username" value="" placeholder="Enter email address"><br>
-
                     <input id="search" type="text" name="search" placeholder="Search... "><i class="fas fa-search"></i>
-
                     <h5>COPYRIGHT © ALL RIGHTS RESERVED LOGO</h5>
                 </div>
             </div>
         </footer>
     </div>
+
+    <script>
+        // Get the button
+        let mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
 </body>
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {
+            slideIndex = 1
+        }
+        if (n < 1) {
+            slideIndex = slides.length
+        }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+</script>
 
 </html>

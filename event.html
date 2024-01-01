@@ -7,6 +7,7 @@
     <title>Event</title>
 
     <link href="https://fonts.cdnfonts.com/css/gentium-basic" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/vogue" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500&display=swap" rel="stylesheet">
@@ -22,16 +23,16 @@
                 <div class="menu">
                     <div id="logo">
                         <a href="index.html">
-                            <img src="images/logoY&C.png">
+                            <img src="images/logo-final 2.png">
                         </a>
                     </div>
                     <ul id="menu-list">
                         <li>
                             <a href="/foryou.html">For You</a>
                         </li>
-                        <li><a href="/profile.html">Profile</a></li>
+                        <li><a href="/job.html">Find a Team</a></li>
                         <li><a href="/discover.html">Discover</a></li>
-                        <li><a href="/job.html">Jobs</a></li>
+                        <li><a href="/profile.html">Profile</a></li>
                     </ul>
 
                     <i class="fas fa-bell"></i>
@@ -39,30 +40,37 @@
                 </div>
             </div>
         </header>
-
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
         <section>
             <div class="topic-event">
-                <a href="index.html">
-                    <i class="fas fa-arrow-left"></i>
-                    <p>GO BACK</p>
-                </a>
+                <div class="event">
+                    <a href="/index.html"><i class="fas fa-arrow-left"></i><button>GO BACK</button></a>
+                </div>
                 <h1>EVENT</h1>
-                <h2>Autumn Winter 2023 “Working Woman”</h2>
-                <img src="images/event-banner.jpg">
+                <img src="images/event-home.jpg">
+                <h2>YOUNG & CHIC</h2>
+                <h3>A DAY OF FASHION</h3>
             </div>
         </section>
 
         <section>
             <div class="detail-event">
-                <!-- <img src="#"> -->
-                <h3>LOGO</h3>
-                <p>ร่วมสนุกกับ Event ออกแบบเครื่องแต่งกายภายใต้หัวข้อ “Working Woman”<br>เพื่อชิงรางวัลมูลค่า300,000บาท และโอกาสต่อยอดผลงานในเชิงพาณิชย์</p>
+                <img src="images/logo-black 1.png">
+                <h3>FASHION EVENT
+                    <br>OCTOBER 22-22 NOVEMBER 2024.</h3>
+                <p>ร่วมสนุกกับ Event ออกแบบเครื่องแต่งกายภายใต้หัวข้อ “Working Woman”
+                    <br>เพื่อชิงรางวัลมูลค่า 300,000 บาท และโอกาสต่อยอดผลงานในเชิงพาณิชย์</p>
                 <h1>รายละเอียดร่วมสนุก</h1>
-                <h2>ดีไซน์เนอร์ไทยหน้าใหม่ได้ร่วมสนุกโดยการออกแบบผลงาน<br>และสร้างผลงานตาม Concept ใน ฤดูกาลนั้นๆ และอัปโหลดผลงาน<br>บนโปรไฟล์ของตนเองพร้อมติดแฮชแท็ก(#) ใครที่ได้รับคะแนนโหวต<br>สูงสุด จะได้รับเงินรางวัล
-                </h2>
-                <div class="postit">
-                    <img src="images/event-postit.png">
+                <h2>Young Designer ที่สนใจเข้าร่วมให้โพสต์ผลลงาน<br>ลงโปรไฟล์ของท่านพร้อมติดแฮชแท็ก</h2>
+                <div class="hasht">
+                    <a href="/hashtag.html"><button>#YandCEvent2023</button></a>
                 </div>
+                <h5>ผู้ชนะอาจเป็นคุณ! อย่ารอช้า!</h5>
+                <!-- <div class="postit">
+                    <img src="images/event-postit.png">
+                </div> -->
+
+                <h6>Click HashTag<br>เพื่อดู Post เพิ่มเติม</h6>
             </div>
         </section>
 
@@ -72,7 +80,7 @@
                     <p>HELP</p>
                     <h1>Team & Condition</h1>
                     <a href="index.html">
-                        <img src="images/logo-white.png">
+                        <img src="images/logo-white 1.png">
                     </a>
 
                     <h2>About Us</h2>
@@ -92,6 +100,30 @@
             </div>
         </footer>
     </div>
+
+    <script>
+        // Get the button
+        let mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
 </body>
 
 </html>
